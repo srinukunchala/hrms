@@ -1,0 +1,39 @@
+<div class="breadcrumb-right">
+    <div class="">
+        <div class="payroll-month-wrapper">
+
+            <!-- BUTTON -->
+            <button class="payroll-month-btn" (click)="togglePayrollMonth($event)">
+                <i class="bi bi-calendar"></i>
+                Payroll Month: {{ selectedPayrollMonth }}
+                <span class="caret" [class.rotate]="isPayrollMonthOpen">▾</span>
+            </button>
+
+            <!-- DROPDOWN -->
+            <div class="payroll-month-dropdown" *ngIf="isPayrollMonthOpen">
+
+                <!-- HEADER -->
+                <div class="dropdown-header">
+                    <span class="arrow">‹</span>
+                    <span class="year">2025 - 2026</span>
+                    <span class="arrow">›</span>
+                </div>
+
+                <!-- MONTH GRID -->
+                <div class="month-grid">
+                    <div class="month-item" *ngFor="let month of months" [class.active]="month === selectedPayrollMonth"
+                        (click)="selectPayrollMonth(month)">
+                        {{ month }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <span class="arrow"></span>
+    </div>
+
+    <div class="dropdown-pill small">
+        <span>All</span>
+        <span class="arrow">▾</span>
+    </div>
+</div>

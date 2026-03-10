@@ -1,0 +1,177 @@
+<div class="employee-nav">
+
+  <div class="nav-left">
+     <div class="breadcrumb">
+    Home > Payroll
+  </div>
+    
+  </div>
+
+  <div class="nav-right">
+    <div class="breadcrumb-right">
+        <app-calander></app-calander>
+      </div>
+    <div class="refresh">⟳</div>
+  </div>
+
+</div>
+<div class="payroll-container">
+
+  
+
+  <!-- Info Banner -->
+  <div class="info-banner">
+    <p>
+      The <strong>Overview</strong> page gives you a summary of the current month's payroll.
+      All data that you view and activities you perform are specific to the chosen payroll month.
+      Explore the Payroll overview page with Help-Doc, How-to Videos and FAQs.
+    </p>
+    <span class="hide-help">Hide Help</span>
+  </div>
+
+  <!-- Month Selector -->
+  <div class="month-selector">
+    <button>Apr 2025</button>
+    <button>May 2025</button>
+    <button>Jun 2025</button>
+    <button>Jul 2025</button>
+    <button>Aug 2025</button>
+    <button>Sep 2025</button>
+    <button>Oct 2025</button>
+    <button>Nov 2025</button>
+    <button class="active">Dec 2025</button>
+    <button>Jan 2026</button>
+    <button>Feb 2026</button>
+    <button>Mar 2026</button>
+  </div>
+
+  <!-- Month Header -->
+  <div class="month-header">
+    <div>
+      <h2>December 2025</h2>
+      <span>Cutoff from 01 Dec 2025 to 31 Dec 2025</span>
+    </div>
+
+    <button class="process-btn">Process Payroll</button>
+  </div>
+
+  <!-- Top Cards Row -->
+  <div class="top-cards">
+
+    <!-- Payout Details -->
+    <div class="card payout-card">
+      <h3>Payout Details</h3>
+
+      <div class="net-pay">₹16,60,837.00</div>
+      <span class="sub-label">Net Pay</span>
+
+      <div class="payout-stats">
+        <div>
+          <strong>₹19,33,881.00</strong>
+          <span>Gross Pay</span>
+        </div>
+
+        <div>
+          <strong>₹2,73,044.00</strong>
+          <span>Deductions</span>
+        </div>
+
+        <div>
+          <strong>31</strong>
+          <span>Work Days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Employee Details -->
+    <div class="card employee-card">
+      <h3>Employee Details</h3>
+
+      <div class="employee-count">
+        <h2>15</h2>
+        <span>Total Employees</span>
+      </div>
+
+      <div class="employee-stats">
+        <div>00 Addition</div>
+        <div>00 Settlements</div>
+        <div>03 Exclusion</div>
+        <div>00 Separation</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="card control-card">
+      <div class="control-row">
+        <span>Payroll Inputs</span>
+        <button>Unlock</button>
+        <button class="primary">Lock</button>
+      </div>
+
+      <div class="control-row">
+        <span>Employee View Release</span>
+        <button class="primary">Release</button>
+        <button>Hold</button>
+      </div>
+
+      <div class="control-row">
+        <span>IT Statement Employee View</span>
+        <button class="primary">Release</button>
+        <button>Hold</button>
+      </div>
+
+      <div class="control-row">
+        <span>Payroll</span>
+        <button>Unlock</button>
+        <button class="primary">Lock</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Cards -->
+  <div class="bottom-cards">
+
+    <div class="card">
+      <h3>Negative Salary</h3>
+      <p>No Records</p>
+    </div>
+
+    <div class="card">
+      <h3>Stop Salary Processing (3)</h3>
+      <p>S Raj Kumar (T0015)</p>
+      <p>Appy Samson (T0044)</p>
+      <span class="more">+1 more</span>
+    </div>
+
+    <div class="card">
+      <h3>Settled Employees</h3>
+      <p>No Records</p>
+    </div>
+
+    <div class="card">
+      <h3>Hold Salary Payout (1)</h3>
+      <p>Nandish Shetty (T0001)</p>
+    </div>
+
+    <div class="card">
+      <h3>Payout Pending</h3>
+      <p>No Records</p>
+    </div>
+
+    <div class="card">
+      <h3>Locations Without PT State</h3>
+      <p>1 Location</p>
+    </div>
+
+  </div>
+
+</div>
+<div class="payroll-container">
+  <!-- payroll UI -->
+
+  <router-outlet></router-outlet>
+</div>
+
+  
+

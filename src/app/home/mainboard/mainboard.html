@@ -1,0 +1,452 @@
+<header class="top-header">
+
+  <div class="left-section">
+
+    <!-- MENU WRAPPER -->
+    <div class="menu-wrapper">
+
+      <!-- 9 Dots -->
+      <div class="menu-icon" (click)="toggleMenu($event)">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- Dropdown -->
+      <div class="apps-dropdown" *ngIf="isMenuOpen">
+
+        <div class="apps-title">Your Apps</div>
+
+        <div class="app-item">
+          <div class="icon purple"><i class="bi bi-house-door"></i></div>
+          <span>Homepage</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/employee" (click)="isMenuOpen = false">
+          <div class="icon cyan"><i class="bi bi-person"></i></div>
+          <span>Employee</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/payroll" (click)="isMenuOpen = false">
+          <div class="icon pink">💰</div>
+          <span>Payroll</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/leave-attendance" (click)="isMenuOpen = false">
+          <div class="icon violet"><i class="bi bi-calendar4"></i></div>
+          <span>Leave and Attendance</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/expense-claims" (click)="isMenuOpen = false">
+          <div class="icon orange"><i class="bi bi-calendar4-range"></i></div>
+          <span>Expense Claims</span>
+        </div>
+
+
+        <div class="app-item" routerLink="/mainboard/performance" (click)="isMenuOpen = false">
+          <div class="icon green"><i class="bi bi-graph-up-arrow"></i></div>
+          <span>Performance Management</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/workflow" (click)="isMenuOpen = false">
+          <div class="icon red">🔄</div>
+          <span>Workflow</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/reports" (click)="isMenuOpen = false">
+          <div class="icon blue">📊</div>
+          <span>Reports</span>
+        </div>
+
+        <div class="app-item" routerLink="/mainboard/engage" (click)="isMenuOpen = false">
+          <div class="icon yellow"><i class="bi bi-broadcast"></i></div>
+          <span>Engage</span>
+        </div>
+
+      </div> <!-- CLOSE apps-dropdown -->
+
+    </div> <!-- CLOSE menu-wrapper -->
+
+    <!-- LOGO OUTSIDE DROPDOWN -->
+    <div class="logo">
+      <img src="assets/logos/logo.png" alt="Logo">
+    </div>
+    <div *ngIf="isEmployeeRoute && !isAddEmployeeRoute" class="employee-nav-inline">
+      <button class="active">Employee</button>
+      <!-- MAIN DROPDOWN -->
+      <div class="nav-item dropdown-wrapper" (click)="toggleMain($event)">
+        <span class="active">
+          Main
+          <span class="caret" [class.rotate]="isMainOpen">
+            ▾
+          </span>
+        </span>
+
+        <div class="dropdown-menu" *ngIf="isMainOpen">
+          <div class="dropdown-item" routerLink="/mainboard/employee/main/mainhub">
+            Analytics Hub
+          </div>
+          <div class="dropdown-item">Organization Chart</div>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown-wrapper">
+        <span class="active" (click)="toggleInformation($event)">
+          Information
+          <span class="caret" [class.rotate]="isInformationOpen">▾</span>
+        </span>
+
+        <div class="dropdown-menu" *ngIf="isInformationOpen" (click)="$event.stopPropagation()">
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'bank' }"
+            (click)="$event.stopPropagation()">
+            Bank / PF / ESI
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'family' }">
+            Family Details
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'passport' }">
+            Passport & Visa
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'position' }">
+            Position History
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'previous' }">
+            Previous Employment
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'separation' }">
+            Separation
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'access' }">
+            Access Card Details
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'nomination' }">
+            Nomination Details
+          </div>
+
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement" [queryParams]="{ tab: 'documents' }">
+            Employee Documents
+          </div>
+
+        </div>
+      </div>
+
+      <div class="nav-item dropdown-wrapper" (click)="toggleAdmin($event)">
+        <span>Admin <span class="caret" [class.rotate]="isAdminOpen">▾</span></span>
+        <div class="dropdown-menu" *ngIf="isAdminOpen">
+          <div class="dropdown-item" routerLink="/mainboard/employee/admin/generate-letter"
+            (click)="isAdminOpen = false">
+            Generate Letter
+          </div>
+          <div class="dropdown-item" routerLink="/mainboard/employee/admin/excel-import" (click)="isAdminOpen = false">
+            Excel Import
+          </div>
+          <div class="dropdown-item" routerLink="/mainboard/employee/bulletin-board">
+            Bulletin Board
+          </div>
+          <div class="dropdown-item" routerLink="/mainboard/employee/admin/mass-communication">
+            Mass Communication
+          </div>
+        </div>
+      </div>
+
+      <!-- SETUP -->
+      <div class="nav-item dropdown-wrapper" (click)="toggleSetup($event)">
+        <span>Setup <span class="caret" [class.rotate]="isSetupOpen">▾</span></span>
+        <div class="dropdown-menu" *ngIf="isSetupOpen">
+          <div class="dropdown-item" routerLink="/mainboard/employee/setup/company-policies">
+            Company Policies & Forms
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isPayrollRoute" class="module-top-nav compact">
+
+      <!-- MAIN LABEL -->
+      <button class="module-btn  payroll">Payroll</button>
+
+      <!-- PAYROLL INPUTS -->
+      <div class="nav-item" (click)="togglePayroll('inputs', $event)">
+        <button class="module-btn">
+          Payroll Inputs
+          <span class="caret" [class.rotate]="activePayrollMenu === 'inputs'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'inputs'">
+          <div class="dropdown-item" routerLink="/mainboard/salarys">
+            Salary
+          </div>
+          <div class="dropdown-item" routerLink="/mainboard/salary-statement">
+            loans
+          </div>
+          <div class="dropdown-item">Income Tax</div>
+          <div class="dropdown-item">Reimbursement</div>
+          <div class="dropdown-item">Employee LOP Days</div>
+          <div class="dropdown-item">Stop Salary Processing</div>
+          <div class="dropdown-item">Arrears</div>
+          <div class="dropdown-item">Final Settlement</div>
+        </div>
+      </div>
+
+      <!-- PROCESS -->
+      <div class="nav-item" (click)="togglePayroll('process', $event)">
+        <button class="module-btn">
+          Process
+          <span class="caret" [class.rotate]="activePayrollMenu === 'process'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'process'">
+          <div class="dropdown-item">Payroll Process</div>
+        </div>
+      </div>
+
+      <!-- VERIFY -->
+      <div class="nav-item" (click)="togglePayroll('verify', $event)">
+        <button class="module-btn">
+          Verify
+          <span class="caret" [class.rotate]="activePayrollMenu === 'verify'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'verify'">
+          <div class="dropdown-item">Quick Salary Statement</div>
+          <div class="dropdown-item">Payroll Statement</div>
+        </div>
+      </div>
+
+      <!-- PAYOUT -->
+      <div class="nav-item" (click)="togglePayroll('payout', $event)">
+        <button class="module-btn">
+          Payout
+          <span class="caret" [class.rotate]="activePayrollMenu === 'payout'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'payout'">
+          <div class="dropdown-item">Bank Transfer</div>
+          <div class="dropdown-item">Payslips</div>
+        </div>
+      </div>
+
+      <!-- PUBLISHED INFO -->
+      <div class="nav-item" (click)="togglePayroll('published', $event)">
+        <button class="module-btn">
+          Published Info
+          <span class="caret" [class.rotate]="activePayrollMenu === 'published'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'published'">
+          <div class="dropdown-item">Payslip</div>
+          <div class="dropdown-item">CTC Payslip</div>
+          <div class="dropdown-item">YTD Summary</div>
+          <div class="dropdown-item">Loan Statement</div>
+          <div class="dropdown-item">IT Statement</div>
+        </div>
+      </div>
+
+      <!-- ADMIN -->
+      <div class="nav-item" (click)="togglePayroll('admin', $event)">
+        <button class="module-btn">
+          Admin
+          <span class="caret" [class.rotate]="activePayrollMenu === 'admin'">▾</span>
+        </button>
+
+        <div class="dropdown" *ngIf="activePayrollMenu === 'admin'">
+          <div class="dropdown-item">Form16</div>
+          <div class="dropdown-item">Form24Q</div>
+          <div class="dropdown-item">Employee IT Declaration</div>
+          <div class="dropdown-item">POI Overview</div>
+          <div class="dropdown-item">FBP Planner</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- LEAVE NAV -->
+    <div *ngIf="isLeaveAttendanceRoute" class="sub-nav">
+
+      <button class="active">Leave and Attendance</button>
+      <div class="nav-item dropdown-wrapper" (click)="toggleLeaveMain($event)">
+        <button class="nav-btn">
+          Main
+          <span class="caret" [class.rotate]="isLeaveMainOpen">▾</span>
+        </button>
+
+        <div class="dropdown-menu" *ngIf="isLeaveMainOpen">
+          <div class="dropdown-item">Attendance Overview</div>
+          <div class="dropdown-item">Leave Calendar</div>
+          <div class="dropdown-item">Who Is In?</div>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown-wrapper" (click)="toggleLeaveInfo($event)">
+        <button class="nav-btn info-btn">
+          Information
+          <span class="caret" [class.rotate]="isLeaveInfoOpen">▾</span>
+        </button>
+
+        <div class="dropdown-menu" *ngIf="isLeaveInfoOpen">
+          <div class="dropdown-item">Employee Leave</div>
+          <div class="dropdown-item">Attendance Muster</div>
+          <div class="dropdown-item">Attendance Info</div>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown-wrapper" (click)="toggleAdmin($event)">
+        <button class="nav-btn admin-btn">
+          Admin
+          <span class="caret" [class.rotate]="isAdminOpen">▾</span>
+        </button>
+
+        <div class="dropdown-menu" *ngIf="isAdminOpen">
+          <div class="dropdown-item">Leave Granter</div>
+          <div class="dropdown-item">Year End Process</div>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown-wrapper" (click)="toggleSetup($event)">
+        <button class="nav-btn setup-btn">
+          Setup
+          <span class="caret" [class.rotate]="isSetupOpen">▾</span>
+        </button>
+
+        <div class="dropdown-menu" *ngIf="isSetupOpen">
+          <div class="dropdown-item">Holiday List</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EXPENSE CLAIMS NAV -->
+    <div *ngIf="isExpenseClaimsRoute" class="module-top-nav">
+      <button class=" expense">Expense Claims</button>
+      <button>Claims Batch</button>
+    </div>
+
+
+    <!-- PERFORMANCE NAV -->
+    <div *ngIf="isPerformanceRoute" class="module-top-nav">
+      <button class=" performance">Performance Management</button>
+      <button>Performance Period</button>
+      <button>Reviews</button>
+      <button>Library</button>
+      <button>Calibration</button>
+    </div>
+
+    <!-- workflow NAV -->
+    <div *ngIf="isWorkflowRoute" class="module-top-nav">
+      <button class=" workflow">workflow</button>
+      <div class="nav-item dropdown-wrapper" (click)="toggleWorkflowModules($event)">
+        <button class="nav-btn module-btn ">
+          Modules
+          <span class="caret" [class.rotate]="isWorkflowModulesOpen">▾</span>
+        </button>
+
+        <div class="dropdown-menu modules-menu" *ngIf="isWorkflowModulesOpen">
+          <div class="dropdown-item active">
+            Regularization & Permission
+          </div>
+          <div class="dropdown-item">Claims</div>
+          <div class="dropdown-item">Leave</div>
+          <div class="dropdown-item">Leave Comp Off</div>
+          <div class="dropdown-item">Leave Cancel</div>
+          <div class="dropdown-item">Help Desk</div>
+          <div class="dropdown-item">Employee Creation</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- REPORTS NAV -->
+    <div *ngIf="isReportsRoute" class="module-top-nav">
+      <button class=" reports">Reports</button>
+      <div class="top-nav-item" (click)="toggleReports($event)">
+        <span>Report</span>
+        <span class="arrow" [class.rotate]="isReportsMenuOpen">▾</span>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown-menu" *ngIf="isReportsMenuOpen">
+          <div class="dropdown-item active">
+            Reports Gallery
+          </div>
+          <div class="dropdown-item">
+            Recent Reports
+          </div>
+        </div>
+      </div>
+      <button>Query Builder</button>
+    </div>
+
+
+
+
+
+
+  </div> <!-- CLOSE left-section -->
+
+  <div class="right-section">
+    <i class="bi bi-search" style="padding: 0 18px;"></i>
+
+    <div class="settings-wrapper" (click)="toggleSettings($event)">
+
+      <div class="settings-wrapper" (click)="toggleSettings($event)">
+
+        <button class="settings-btn"><i class="bi bi-gear"></i><span class="arrow">▾</span></button>
+
+        <div class="settings-dropdown" *ngIf="isSettingsOpen">
+          <div class="dropdown-header">Go to</div>
+
+          <div class="dropdown-item"><i class="bi bi-person"></i> <span>My profile</span></div>
+          <div class="dropdown-item"><i class="bi bi-gear"></i> <span>Account settings</span></div>
+
+          <div class="divider"></div>
+
+          <div class="dropdown-item"><i class="bi bi-wrench"></i> <span>User Administration</span></div>
+          <div class="dropdown-item"><i class="bi bi-tv"></i> <span>System Settings</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <span class="power-btn" (click)="goToDashboard()">
+      <i class="bi bi-power"></i>
+    </span>
+  </div>
+
+
+
+</header>
+<!-- TOGGLE BUTTONS -->
+<!-- HOME TOGGLE (Welcome / Dashboard) -->
+<div *ngIf="!isEmployeeRoute && !isPayrollRoute && !isLeaveAttendanceRoute && !isExpenseClaimsRoute 
+&& !isPerformanceRoute && !isWorkflowRoute && !isReportsRoute  && !isengageRoute && !isSalaryStatementRoute"
+  class="toggle-container">
+
+  <div class="toggle-container-inner">
+    <button routerLink="welcome" routerLinkActive="active">
+      Welcome
+    </button>
+
+    <button routerLink="dh-charts" routerLinkActive="active">
+      Dashboard
+    </button>
+  </div>
+</div>
+
+
+
+<!-- CONTENT AREA -->
+<div class="content-area">
+  <router-outlet></router-outlet>
+
+</div>

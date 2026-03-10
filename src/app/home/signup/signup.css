@@ -1,0 +1,447 @@
+/* FULL PAGE */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f5f3;
+}
+
+/* BIG OUTER BOX (THIS WAS MISSING) */
+.signup-wrapper {
+  width: 100%;
+  max-width: 1180px;   /* exact professional width */
+  margin: 80px auto;   /* center with top spacing */
+  display: grid;
+  grid-template-columns: 1fr 520px; /* fixed right card width */
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+
+/* LEFT */
+.signup-left {
+  padding: 80px 90px;
+}
+
+
+.signup-left h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.signup-left h1 span {
+  color: #8a00ff;
+}
+
+.desc {
+  margin: 20px 0 28px;
+  font-size: 15px;
+  color: #555;
+}
+
+.signup-left h4 {
+  margin-bottom: 12px;
+}
+
+.signup-left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.signup-left li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.signup-left li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #8a00ff;
+}
+
+/* RIGHT BACKGROUND AREA */
+.signup-right {
+  background: #faf7f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px;
+}
+
+
+/* SIGNUP CARD */
+.signup-card {
+  width: 400px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.signup-card h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.small {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+label span {
+  color: red;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2px;   /* perfect spacing */
+}
+
+.checkbox input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  accent-color: #6a0dad;
+}
+
+
+
+/* BUTTON */
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: #3b0066;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* LOGIN TEXT */
+.login-text {
+  margin-top: 0px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-text span {
+  color: #8a00ff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.login-text span {
+  color: #8a00ff;
+  cursor: pointer;
+  font-weight: 600;
+}
+/* TRUST SECTION */
+.trust-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 80px 0 50px;
+  flex-wrap: wrap;
+}
+
+/* Awards */
+.awards {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.awards img {
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Divider */
+.divider {
+  width: 1px;
+  height: 60px;
+  background: #ddd;
+}
+.submit-btn:hover {
+  background: #5b21b6;
+  text-align: center;
+}
+
+.submit-btn{
+ margin-left: 103px; 
+}
+
+/* Logos */
+.logos {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.logos img {
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* TESTIMONIAL */
+.testimonial-section {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 100px;
+}
+
+.testimonial-card {
+  background: #f7e6ff;
+  max-width: 900px;
+  padding: 48px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.quote {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.author img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.author span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .trust-section {
+    flex-direction: column;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .testimonial-card {
+    padding: 32px;
+  }
+}
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* ⬅️ REDUCED WIDTH (THIS FIXES YOUR ISSUE) */
+.faq-container {
+  max-width: 850px;     /* 👈 smaller & balanced */
+  margin: 0 auto;
+}
+
+/* Title */
+.faq-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #111;
+}
+
+/* FAQ card */
+.faq-box {
+  border: 1.5px solid #e6a8ff;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #fff;
+}
+
+/* Hover */
+.faq-box:hover {
+  background: #faf5ff;
+}
+
+/* Question row */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16.5px;   /* 👈 slightly smaller */
+  font-weight: 600;
+  color: #222;
+}
+
+/* Arrow */
+.arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #777;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Answer */
+.faq-body {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .faq-container {
+    max-width: 100%;
+  }
+
+  .faq-title {
+    font-size: 24px;
+  }
+
+  .faq-header {
+    font-size: 15px;
+  }
+}
+
+/* ===== SECTION LAYOUT ===== */
+.trial-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* ===== RIGHT CARD ===== */
+.trial-card {
+  width: 100%;
+  max-width: 380px;          /* smaller like reference */
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.trial-card h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.trial-card p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.trial-card label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trial-card input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.url-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.url-group span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.primary-btn {
+  margin-top: 0px;
+  padding: 14px;
+  border-radius: 30px;
+  background: #5a0080;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #450060;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #5a0080;
+  margin-top: 12px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;   /* 👈 This centers it */
+  font-weight: 600;
+}
+
+
+.login-link span {
+  color: #5a0080;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+

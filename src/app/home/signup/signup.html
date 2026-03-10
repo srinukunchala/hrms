@@ -1,0 +1,184 @@
+<section class="signup-page">
+
+  <div class="signup-wrapper">
+
+    <!-- LEFT -->
+    <div class="signup-left">
+      <h1><span>Not</span> just a free<br />trial!</h1>
+
+      <p class="desc">
+        Try the greytHR ‘Enterprise’ Experience for 7 Days.
+        No payment, no credit card, no commitment.
+      </p>
+
+      <h4>Free Account Inclusions:</h4>
+      <ul>
+        <li>All features from Enterprise plan</li>
+        <li>Fully functional, mobile ESS</li>
+        <li>Prefilled dummy data</li>
+        <li>Guided product tours for admins</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="signup-right">
+      <div class="signup-card">
+
+        <h2>7 Days Trial Account</h2>
+        <p class="small">Set up takes 60 seconds</p>
+
+        <label>Email Address <span>*</span></label>
+        <input type="email" placeholder="Type here..." />
+
+        <div class="checkbox">
+          <input type="checkbox" checked />
+          <p>
+            I agree to receive email updates from greytHR.
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+
+        <!-- STEPS -->
+        <section class="trial-section">
+
+          <!-- STEP 1 -->
+          <div class="trial-card" *ngIf="currentStep === 1">
+            <button class="primary-btn" (click)="goToStep2()">
+              Begin Trial
+            </button>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="trial-card" *ngIf="currentStep === 2">
+
+            <h2>Try greytHR for 7 days</h2>
+            <p>No credit card. No commitments.</p>
+
+            <label>First Name *</label>
+            <input type="text" placeholder="Type here..." />
+
+            <label>Last Name *</label>
+            <input type="text" placeholder="Type here..." />
+
+            <label>Phone Number</label>
+            <input type="text" placeholder="Type here..." />
+
+            <label>Login URL *</label>
+            <div class="url-group">
+              <input type="text" placeholder="company name" />
+              <span>.greythr.com</span>
+            </div>
+
+            <label>Login ID *</label>
+            <input type="email" placeholder="example@gmail.com" />
+
+            <label>Password *</label>
+            <input type="password" placeholder="Type here..." />
+
+            <!-- GET OTP -->
+            <button class="primary-btn" *ngIf="!isOtpSent" (click)="getOtp()">
+              Get OTP
+            </button>
+
+            <!-- OTP SECTION -->
+            <div class="otp-section" *ngIf="isOtpSent">
+
+              <p class="otp-info">
+                An OTP has been sent to your email address.<br />
+                Please enter the same.
+              </p>
+
+              <label>OTP *</label>
+              <input type="text" placeholder="Type here..." />
+
+              <p class="resend">
+                Didn’t receive the OTP?
+                <span><button>Resend OTP</button></span>
+              </p>
+
+              <button class="submit-btn" (click)="submitForm()">
+                Submit
+              </button>
+
+            </div>
+
+            <button class="back-btn" (click)="goBack()">← Back</button>
+
+          </div>
+
+        </section>
+        
+        <p class="login-text">
+  Already have a greytHR account?
+  <button class="login-btn" routerLink="/authentication">
+  Login
+</button>
+</p>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- TRUST + AWARDS SECTION -->
+<section class="trust-section">
+
+  <!-- Awards -->
+  <div class="awards">
+    <img src="assets/icons/award-implementable.png" alt="Most Implementable" />
+    <img src="assets/icons/award-leader.png" alt="Leader 2024" />
+    <img src="assets/icons/award-adoption.png" alt="Highest User Adoption" />
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Company Logos -->
+  <div class="logos">
+    <img src="assets/logos/piramal.png" alt="Piramal" />
+    <img src="assets/logos/godrej.png" alt="Godrej" />
+    <img src="assets/logos/tata.png" alt="Tata" />
+  </div>
+
+</section>
+
+<!-- TESTIMONIAL SECTION -->
+<section class="testimonial-section">
+  <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
+
+    <p class="quote">
+      "The best HR software out there. The greytHR team is very supportive and
+      guided us through every single detail during the onboarding. Even after
+      the onboarding was done, they ensured to keep following up with us and
+      ensured a very smooth experience."
+    </p>
+
+    <div class="author">
+      <img src="assets/images/user.png" alt="User" />
+      <div>
+        <strong>Syeda S.</strong>
+        <span>HR Manager</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="faq-section">
+  <h2 class="faq-title">FAQs</h2>
+
+  <div class="faq-box" *ngFor="let faq of faqs; let i = index">
+    <div class="faq-header" (click)="toggleFaq(i)">
+      <span>{{ faq.question }}</span>
+      <span class="arrow" [class.open]="faq.open">⌄</span>
+    </div>
+
+    <div class="faq-body" *ngIf="faq.open">
+      {{ faq.answer }}
+    </div>
+  </div>
+</section>
+
+ 
+
+
+

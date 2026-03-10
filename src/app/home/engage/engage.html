@@ -1,0 +1,259 @@
+<div class="engage-wrapper">
+
+  <!-- 🔹 TOP FIXED AREA -->
+  <div class="engage-top">
+
+    <!-- 🔹 Breadcrumb + Pills -->
+    <div class="breadcrumb-row">
+      <div class="breadcrumb-left">
+        Home <span>></span> <b>Engage</b>
+      </div>
+
+      <div class="breadcrumb-right">
+        <app-calander></app-calander>
+      </div>
+      
+    </div>
+
+  
+
+    <!-- 🔹 Welcome + Actions Box -->
+    <div class="welcome-row">
+
+      <div class="welcome-card">
+        <div class="avatar">SC</div>
+        <div>
+          <h3>Hey srinukunchala470@gmail.com,</h3>
+          <p>Ready to dive in?</p>
+        </div>
+      </div>
+      
+
+      <div class="actions">
+        <div class="action-card pink">
+          <div class="icon">🏅</div>
+          <span>Give Kudos</span>
+        </div>
+
+        <div class="action-card teal">
+          <div class="icon">📊</div>
+          <span>Create Polls</span>
+        </div>
+
+        <div class="action-card purple">
+          <div class="icon">📝</div>
+          <span>Create Posts</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🔹 MAIN CONTENT (FIXED HEIGHT AREA) -->
+  <div class="content-layout">
+
+    <!-- LEFT -->
+    <div class="filters-column">
+      <div class="filter-box">
+        <h4>Filters</h4>
+
+        <div class="filter-section">
+          <p class="section-title">Activities</p>
+
+          <label class="filter-option ">
+            <input type="radio" name="activity" />
+            <span>All Activities</span>
+          </label>
+
+          <label class="filter-option">
+            <input type="radio" name="activity" />
+            <span>Kudos</span>
+          </label>
+
+          <label class="filter-option">
+            <input type="radio" name="activity" />
+            <span>Polls</span>
+          </label>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="search-pill-wrapper">
+          <input type="text" class="search-pill" placeholder="Search" />
+          <span class="search-icon"><i class="bi bi-search"></i></span>
+        </div>
+
+        <div class="accordion-item"><span>Groups</span><span class="arrow">▾</span></div>
+        <div class="accordion-item"><span>Location</span><span class="arrow">▾</span></div>
+        <div class="accordion-item"><span>Department</span><span class="arrow">▾</span></div>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="feed-column">
+
+      <div class="feed-header">
+        <h3>All Activities <br> All Groups</h3>
+        <div class="sort-container">
+
+          <!-- STATIC LABEL -->
+          <span class="sort-label">Sort:</span>
+
+          <!-- BUTTON -->
+          <button class="sort-btn" (click)="toggleSort($event)">
+            {{ selectedSort }}
+            <span class="caret" [class.rotate]="isSortOpen">▾</span>
+          </button>
+
+          <!-- DROPDOWN -->
+          <div class="sort-dropdown" *ngIf="isSortOpen">
+            <div class="sort-item" [class.active]="selectedSort === 'Newest first'"
+              (click)="selectSort('Newest first')">
+              Newest first
+            </div>
+
+            <div class="sort-item" [class.active]="selectedSort === 'Most recent interacted'"
+              (click)="selectSort('Most recent interacted')">
+              Most recent interacted
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ✅ ONLY THIS SCROLLS  -->
+      <div class="feed-scroll scroll-container">
+
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Another post example...</p>
+        </div>
+
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Congratulations, Dinesh Babu!</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+        <div class="feed-card">
+          <h4>Your LOGO here</h4>
+          <p>Sample content scrolling...</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

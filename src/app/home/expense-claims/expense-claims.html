@@ -1,0 +1,93 @@
+<div class="employee-nav">
+
+  <div class="nav-left">
+     <div class="breadcrumb">
+    Home > 
+Claims Batches
+  </div>
+    
+  </div>
+
+  <div class="nav-right">
+    <div class="breadcrumb-right">
+        <app-calander></app-calander>
+      </div>
+    <div class="refresh">⟳</div>
+  </div>
+
+</div>
+<div class="expense-container">
+
+
+
+  <!-- Info Box -->
+  <div class="info-box">
+    <b>The Claims Batch</b> page enables you to view and create Claims Batches.
+    A Claims Batch is typically a cluster to which a set of claims (based on the date range) belong.
+    This page displays the existing list of Claims Batches that you can filter using the drop-down lists available.
+  </div>
+
+
+ <div class="expense-container">
+
+  <div class="top-bar">
+    <div>
+      <label>Year:</label>
+      <select>
+        <option>All</option>
+      </select>
+    </div>
+    <button class="create-btn">Create Batch</button>
+  </div>
+
+  <!-- Accordion -->
+  <div 
+    class="batch-card"
+    *ngFor="let batch of batches; let i = index"
+  >
+
+    <div class="batch-header" (click)="toggle(i)">
+      <div>
+        <h3>{{batch.title}} 
+          <span class="date">{{batch.date}}</span>
+        </h3>
+      </div>
+
+      <div class="icons">
+        <span>🔓</span>
+        <span>✏️</span>
+        <span>🗑️</span>
+        <span class="arrow">
+          {{ openIndex === i ? '▲' : '▼' }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Expand Section -->
+    <div 
+      class="batch-body"
+      *ngIf="openIndex === i"
+    >
+      <div class="details-row">
+        <div>
+          <p>No. of claim groups:</p>
+          <p>No. of single claims:</p>
+        </div>
+        <div>
+          <p>Amount:</p>
+          <p>Amount:</p>
+        </div>
+      </div>
+
+      <button class="detail-btn">Detailed View</button>
+    </div>
+
+  </div>
+
+
+
+    <button class="detail-btn">Detailed View</button>
+  </div>
+
+
+

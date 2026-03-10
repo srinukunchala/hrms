@@ -1,0 +1,144 @@
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+ 
+  padding-right: 202px;
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 18px;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ===== TABLE CARD ===== */
+.table-card {
+  background: #ffffff;
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ===== SCROLL AREA ===== */
+.table-wrapper {
+  max-height: 420px;       /* same feel as greytHR */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;         /* greytHR font size */
+  color: #1f2937;
+}
+
+/* ===== HEADER ===== */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  background: #eef2f7;
+  color: #374151;
+  font-weight: 600;
+
+  padding: 9px 12px;
+  text-align: left;
+  white-space: nowrap;
+
+  border-bottom: 1px solid #d1d9e6;
+  border-right: 1px solid #e5e7eb;
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+/* ===== BODY ROWS ===== */
+tbody td {
+  padding: 9px 12px;       /* compact rows */
+  white-space: nowrap;
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf2f7;
+  border-right: 1px solid #edf2f7;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+/* ===== ROW HEIGHT (IMPORTANT) ===== */
+tbody tr {
+  height: 42px;            /* matches greytHR row height */
+}
+
+/* ===== HOVER ===== */
+tbody tr:hover td {
+  background: #f5f8fc;
+}
+
+/* ===== LINK STYLE ===== */
+.link {
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ===== ACTION ICONS ===== */
+td:last-child {
+  font-size: 14px;
+  color: #475569;
+}
+
+td:last-child span,
+td:last-child i {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+td:last-child span:hover,
+td:last-child i:hover {
+  color: #4f46e5;
+}
+
+/* ===== SCROLLBAR (LIKE SCREENSHOT) ===== */
+.table-wrapper::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}

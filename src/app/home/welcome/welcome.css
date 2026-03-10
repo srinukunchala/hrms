@@ -1,0 +1,284 @@
+/* HERO CONTAINER */
+.welcome-hero {
+  position: relative;
+  height: 260px;
+  background: #f9fafb;
+  overflow: hidden;
+}
+
+/* LEFT TEXT */
+.welcome-content {
+  position: relative;
+  z-index: 3;
+  padding: 56px 64px 0 64px;
+  max-width: 520px;
+}
+
+/* RIGHT SKYLINE CONTAINER */
+.skyline-zone {
+  position: absolute;
+  top: 72px;              /* 🔥 starts exactly under toggle */
+  right: 0;
+  width: 50%;             /* 🔥 ONLY right half */
+  height: 180px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* SKYLINE IMAGE */
+.skyline {
+  position: absolute;
+  right: 0;               /* 🔥 ends flush at right edge */
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+}
+
+/* FADE MASK (LEFT SIDE ONLY) */
+.skyline-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    #f9fafb 0%,
+    rgba(249, 250, 251, 0.95) 30%,
+    rgba(249, 250, 251, 0.6) 55%,
+    rgba(249, 250, 251, 0.2) 75%,
+    rgba(249, 250, 251, 0) 100%
+  );
+}
+
+
+/* Content above background */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 50%;
+}
+
+/* LEFT TEXT */
+.left-hero h1 {
+  font-size: 56px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.left-hero p {
+  font-size: 18px;
+  color: #667085;
+}
+
+.welcome-toggle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-toggle button {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid #d3d8e2;
+  background: white;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.welcome-toggle .active {
+  background: #e6ecff;
+  border-color: #7a8cff;
+}
+
+/* Keep text above gradient */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.left-hero h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.left-hero p {
+  font-size: 18px;
+  color: #667085;
+}
+/* RIGHT SIDE (IMPORTANT PART) */
+.hero-right {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 520px;   /* controls how BIG it looks */
+  height: auto;
+}
+
+/* MAIN SECTION */
+.main-content {
+  display: flex;
+  padding: 3px 60px;
+  gap: 40px;
+}
+
+.left-column {
+  flex: 2;
+}
+
+.right-column {
+  flex: 1;
+}
+
+.fav-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.fav-card {
+  width: 70px;
+  height: 100px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.fav-card span {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.fav-card.blue {
+  background: #e6ecff;
+}
+
+.fav-card.beige {
+  background: #f5e8d8;
+}
+
+.fav-card.add {
+  background: #e8edf7;
+  font-size: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Help Links */
+.help-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.help-links span {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Webinar Card */
+.webinar-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.webinar-card button {
+  margin-top: 15px;
+  background: #6c63ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Floating Button */
+.floating-help {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #cfd8e3;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-btn:hover {
+  background-color: #f5f7fa;
+  border-color: #a8b3c5;
+}
+
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #cfd8e3;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-btn:hover {
+  background-color: #f5f7fa;
+  border-color: #a8b3c5;
+}
+
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #cfd8e3;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-btn:hover {
+  background-color: #f5f7fa;
+  border-color: #a8b3c5;
+}
+
+
+
+
+

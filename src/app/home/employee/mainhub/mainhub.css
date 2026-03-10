@@ -1,0 +1,106 @@
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* Top controls */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  background-color: white;
+  margin-top: -16px;
+}
+
+.top-controls input {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 6px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* Table Card */
+.table-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #e5e7eb;
+  overflow: hidden; /* important for sticky header */
+}
+
+/* Table Header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= TABLE SCROLL FIX ================= */
+
+/* Wrapper controls scrolling */
+.table-wrapper {
+  max-height: 420px;          /* 🔥 controls table height */
+  overflow-y: auto;           /* vertical scroll only */
+  overflow-x: auto;           /* horizontal scroll if needed */
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Sticky header */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #f3f4f6;
+  z-index: 2;
+}
+
+/* Cells */
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Row hover */
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Link style */
+.link {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Footer */
+.table-footer {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #6b7280;
+}

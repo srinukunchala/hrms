@@ -1,0 +1,74 @@
+<div class="employee-nav">
+
+  <div class="nav-left">
+     <div class="breadcrumb">
+    Home > Process Payroll
+  </div>
+    
+  </div>
+
+  <div class="nav-right">
+    <div class="filter-box">📅 Payroll Month: Dec'25</div>
+    <div class="filter-box">👥 All</div>
+    <div class="refresh">⟳</div>
+  </div>
+
+</div>
+
+<!-- Info Message -->
+<div class="info-box">
+  <p>
+    <strong>The Payroll Process</strong> page helps you to process the payroll with the help
+    of the provided checklist. The checklist provided indicate the tasks that you need to
+    complete to process the payroll.
+  </p>
+
+  <p>
+    Once all the items are marked as completed, click the
+    <strong>Process Payroll</strong> button to complete the processing activity.
+  </p>
+
+  <p class="links">
+    Explore greytHR by <a>Help-Doc</a>, watching <a>How-to Videos</a> and <a>FAQ</a>
+  </p>
+
+  <span class="hide-help">Hide Help</span>
+</div>
+
+<!-- Main Layout -->
+<div class="content">
+
+  <!-- LEFT : CHECKLIST -->
+  <div class="checklist">
+    <h3>Checklist</h3>
+
+    <label class="check-item" *ngFor="let item of visibleChecklist">
+      <input type="checkbox" />
+      <span>{{ item }}</span>
+    </label>
+
+    <div class="toggle" (click)="toggleChecklist()">
+      {{ showAll ? 'less ↑' : 'more ↓' }}
+    </div>
+  </div>
+
+  <!-- RIGHT : COMPLETED TASKS -->
+  <div class="completed">
+    <div class="header">
+      <h3>Completed Tasks</h3>
+      <button class="reset">Reset</button>
+    </div>
+
+    <p class="empty">
+      (Feeling empty. Tick off some items & make my day...)
+    </p>
+  </div>
+
+</div>
+
+<!-- Bottom Actions -->
+<div class="actions">
+  <button class="primary">Process Payroll</button>
+  <button class="secondary">Cancel</button>
+</div>
+

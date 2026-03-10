@@ -1,1 +1,717 @@
-<p>dashboard works!</p>
+<!-- TOP INFO BAR -->
+<div class="top-strip">
+
+  <!-- CENTER CONTENT -->
+  <div class="strip-center">
+    <img src="assets/logos/new-badge.gif" class="new-badge" alt="NEW">
+    <span class="strip-text">Labour Codes 2025 Guide
+</span>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="strip-right">
+
+    <div class="region-wrapper">
+      <div class="region-btn" (click)="toggleRegion()">
+        <span class="globe"><i class="bi bi-globe"></i></span>
+        <span class="region-text">{{ selectedRegion.code }}</span>
+        <span class="arrow" [class.open]="regionOpen">▾</span>
+      </div>
+
+      <div class="region-dropdown" *ngIf="regionOpen">
+        <div 
+          class="region-item"
+          *ngFor="let region of regions"
+          (click)="selectRegion(region); $event.stopPropagation()"
+        >
+          {{ region.name }}
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.greythr.com/greythr-help/" target="_blank">
+  <span class="top-link">Support</span>
+</a>
+
+   <a routerLink="/authentication" class="login-text">Login</a>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- NAVBAR -->
+<header class="nav-wrapper">
+  <div class="nav">
+    <div class="nav-left">
+      <div class="brand">
+  <img src="assets/logos/greythr-logo.svg" alt="greytHR Logo">
+</div>
+
+
+      <nav class="menu">
+        <div class="menu-item">
+  <a class="menu-trigger">
+  Product <span class="arrow">▾</span>
+</a>
+
+  <!-- DROPDOWN -->
+  <div class="mega-dropdown">
+    <div class="dropdown-col">
+      <h4>Product</h4>
+      <a><span class="item-icon hr"></span>HR Software</a>
+
+      <a><span class="item-icon hr"></span>HR Software</a>
+      <a><span class="item-icon payroll"></span>Payroll Software</a>
+      <a><span class="item-icon leave"></span>Leave Management</a>
+      <a><span class="item-icon attendance"></span>Attendance Management</a>
+      <a><span class="item-icon performance"></span>Performance Management</a>
+      <a><span class="item-icon ess"></span>Employee Self Service</a>
+    </div>
+
+    <div class="dropdown-col">
+  <h4>For Industry</h4>
+
+  <a><span class="item-icon industry"></span>Manufacturing</a>
+  <a><span class="item-icon saas"></span>SaaS / IT</a>
+  <a><span class="item-icon healthcare"></span>Healthcare</a>
+</div>
+  </div>
+</div>
+
+        <a class="menu-trigger" (click)="togglePartner()">pricing</a>
+
+
+        <a class="menu-trigger" (click)="togglePartner()">Customers</a>
+       
+
+      <div class="partner-wrapper" (mouseleave)="closePartner()">
+
+  <a class="menu-trigger" (click)="togglePartner()">
+    Partner 
+    <span class="arrow" [class.open]="partnerOpen">▾</span>
+  </a>
+
+  <!-- DROPDOWN -->
+  <div class="partner-dropdown" *ngIf="partnerOpen">
+    
+    <div class="partner-item">
+      <span class="icon">🤝</span>
+      <span>Partner with us</span>
+    </div>
+
+    <div class="partner-item">
+      <span class="icon">💼</span>
+      <span>Payroll Service Providers</span>
+    </div>
+
+    <div class="partner-item">
+      <span class="icon">🎁</span>
+      <span>Customer Referral Program</span>
+    </div>
+
+    <div class="partner-bottom">
+      <img src="assets/images/hr-report.jpg" alt="HR Report">
+      <div>
+        <h4>HR Ratio Report 2024</h4>
+        <p>Discover key insights into HR ratios across industries and company sizes in India</p>
+       <a 
+  href="https://www.greythr.com/reports/hr-ratio-india-2024/?utm_source=Other&utm_medium=Website&utm_campaign=240520_menubar"
+  target="_blank"
+  class="read-now"
+>
+  Read Now
+</a>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- RESOURCES DROPDOWN --><div class="nav-item resources-wrapper">
+
+  <a class="menu-trigger" (click)="toggleResources()">
+    Resources
+    <span class="arrow" [class.open]="resourcesOpen">▾</span>
+  </a>
+
+  <div class="resources-dropdown" *ngIf="resourcesOpen">
+
+    <!-- LEFT COLUMN -->
+    <div class="resources-left">
+
+      <div class="resource-list">
+        <a>Resource Library</a>
+        <a>Blogs</a>
+        <a>Guides</a>
+        <a>Templates</a>
+        <a>Reports & Insights</a>
+        <a>Ebooks</a>
+        <a>Performance Management</a>
+        <a>Payroll Management</a>
+        <a>Leave Management</a>
+        <a>Attendance Management</a>
+        <a>Statutory Compliances</a>
+      </div>
+
+      <!-- HR CARD -->
+      <div class="resource-card">
+        <img src="assets/images/hr-report.jpg" alt="HR Report" />
+
+        <div class="card-content">
+          <h4>HR Ratio Report 2024</h4>
+          <p>
+            Discover key insights into HR ratios across industries and
+            company sizes in India
+          </p>
+
+          <a href="https://www.greythr.com/reports/hr-ratio-india-2024/?utm_source=Other&utm_medium=Website&utm_campaign=240520_menubar"
+             target="_blank">
+            Read Now
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- ✅ CLOSE resources-left HERE -->
+
+
+    <!-- RIGHT COLUMN -->
+    <div class="resources-right">
+      <a>Webinars</a>
+      <a>Podcasts</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+        <div class="nav-item company-wrapper">
+
+  <a class="menu-trigger" (click)="toggleCompany()">
+    Company
+    <span class="arrow" [class.open]="companyOpen">▾</span>
+  </a>
+
+  <div class="company-dropdown" *ngIf="companyOpen">
+
+    <a><i class="bi bi-info-circle"></i> About Us</a>
+    <a><i class="bi bi-mortarboard"></i> Academy</a>
+    <a><i class="bi bi-globe"></i> Community</a>
+    <a><i class="bi bi-broadcast"></i> Newsroom</a>
+    <a><i class="bi bi-briefcase"></i> Careers</a>
+
+    <a class="contact-btn">
+      <i class="bi bi-telephone"></i> Contact Us
+    </a>
+
+    <!-- HR CARD BELOW -->
+    <div class="company-card">
+      <img src="assets/images/hr-report.jpg" alt="HR Report">
+
+      <div class="card-content">
+        <h4>HR Ratio Report 2024</h4>
+        <p>
+          Discover key insights into HR ratios across industries
+          and company sizes in India
+        </p>
+
+        <a href="https://www.greythr.com/reports/hr-ratio-india-2024/?utm_source=Other&utm_medium=Website&utm_campaign=240520_menubar"
+           target="_blank">
+          Read Now
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      </nav>
+    </div>
+
+    <div class="nav-right">
+
+
+      <button class="primary-btn" (click)="openDemo()">
+  Request a Demo
+</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>
+    Welcome to the 
+    <span>greyt</span> side.
+  </h1>
+
+  <p>
+    The most trusted full-suite HRMS for your people operations
+  </p>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+
+  <div class="stat green">
+    <div class="icon-box">
+      <img src="/assets/icons/globe.png" alt="Countries">
+    </div>
+    <h2>25+</h2>
+    <p>Countries</p>
+  </div>
+
+  <div class="stat blue">
+    <div class="icon-box">
+      <img src="/assets/icons/company.png" alt="Companies">
+    </div>
+    <h2>30,000+</h2>
+    <p>Companies</p>
+  </div>
+
+  <div class="stat yellow">
+    <div class="icon-box">
+      <img src="/assets/icons/users.png" alt="Users">
+    </div>
+    <h2>3 million+</h2>
+    <p>Users</p>
+  </div>
+
+</section>
+
+
+<!-- FREE ACCOUNT CTA -->
+<section class="free-account">
+  <button class="free-btn">Start a greytHR Free Account</button>
+</section>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <div class="banner-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="banner-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Greythr_logo.png"
+           alt="greytHR"
+           class="banner-logo" />
+
+      <h2>
+        Full-Suite HRMS <br />
+        for <span>Payroll</span>
+      </h2>
+
+      <button class="watch-btn">
+        ▶ Watch now
+      </button>
+    </div>
+
+    <!-- RIGHT ILLUSTRATION -->
+    <div class="banner-right">
+      <!-- Illustration placeholder -->
+      <div class="illustration"></div>
+    </div>
+
+  </div>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta">
+    <span>Automate your entire employee lifecycle in one place →</span>
+    <button class="primary-btn">Explore greytHR with an Expert</button>
+  </div>
+</section>
+
+<section class="problems">
+  <h2>
+    Modern <span>HR and Payroll</span> are Complex
+  </h2>
+
+  <p class="subtitle">
+    greytHR solves some of the most common HR and Payroll issues that slow down your business.
+  </p>
+
+  <div class="problem-grid">
+    <div class="problem-card green">
+      <div class="card-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+      <h3>You don’t have an HRMS, and running HR ops on Sheets</h3>
+      <p>
+        Use one single app for all HR and Payroll Processes, including workforce management,
+        employee relations, leave and attendance
+      </p>
+    </div>
+
+    <div class="problem-card purple">
+      <div class="card-icon"><i class="bi bi-clock-fill"></i></div>
+      <h3>Your payroll solution is unstable, requires hours of manual work</h3>
+      <p>
+        Ensure faster and accurate checkouts. Implement complex policies. Automate hours of
+        manual payroll processes and remove any manual error
+      </p>
+    </div>
+
+    <div class="problem-card blue">
+      <div class="card-icon"><i class="bi bi-wrench-adjustable-circle-fill"></i>  </div>
+      <h3>Most HR and payroll tasks are manual, clerical, and take hours to complete</h3>
+      <p>
+        Give access to the best-in-category leave management solution for efficient leave
+        management
+      </p>
+    </div>
+
+    <div class="problem-card yellow">
+      <div class="card-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+      <h3>You’re still using old ways to capture and track leaves and attendance</h3>
+      <p>
+        150+ basic and advanced admin reports covering Leave and Attendance, Payroll, MIS,
+        Claims, Welfare and State-level Policies
+      </p>
+    </div>
+
+    <div class="problem-card pink full">
+      <div class="card-icon"><i class="bi bi-phone-fill"></i></div>
+      <h3>Your employees need a self-serving portal (ESS), ON MOBILE!</h3>
+      <p>
+        Mobile-first ESS enables common HR tasks for employees and managers. Access payslips,
+        manage leaves, add expense claims and more.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="value-section">
+  <h2>
+    Everyone gets <span>value</span> from day 1
+  </h2>
+
+  <p class="subtitle">
+    A platform loved by everyone in your company - by employers and employees
+  </p>
+
+ <!-- ROLES (emoji-based cards like STATS) -->
+<div class="roles-grid">
+
+  <section class="roles-section">
+
+  <div class="roles">
+
+    <div 
+      class="role-card"
+      [class.active]="activeRole === 'cio'"
+      (click)="selectRole('cio')">
+
+      <div class="icon-wrap">
+        <img src="assets/icons/cio.png" alt="CIO" />
+      </div>
+      <p>CIO</p>
+    </div>
+
+    <div 
+      class="role-card"
+      [class.active]="activeRole === 'chro'"
+      (click)="selectRole('chro')">
+
+      <div class="icon-wrap">
+        <img src="assets/icons/chro.png" alt="CHRO" />
+      </div>
+      <p>CHRO</p>
+    </div>
+
+    <div 
+      class="role-card"
+      [class.active]="activeRole === 'payroll'"
+      (click)="selectRole('payroll')">
+
+      <div class="icon-wrap">
+        <img src="assets/icons/payroll.png" alt="Payroll Admin" />
+      </div>
+      <p>Payroll Admin</p>
+    </div>
+
+    <div 
+      class="role-card"
+      [class.active]="activeRole === 'manager'"
+      (click)="selectRole('manager')">
+
+      <div class="icon-wrap">
+        <img src="assets/icons/manager.png" alt="Managers" />
+      </div>
+      <p>Managers</p>
+    </div>
+
+    <div 
+      class="role-card"
+      [class.active]="activeRole === 'employee'"
+      (click)="selectRole('employee')">
+
+      <div class="icon-wrap">
+        <img src="assets/icons/employee.png" alt="Employees" />
+      </div>
+      <p>Employees</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+</div>
+<!-- ROLE DETAILS SECTION -->
+<div class="role-details">
+
+  <div *ngIf="activeRole === 'cio'">
+    <h3>Without greytHR – CIO</h3>
+       <div *ngIf="activeRole === 'cio'" class="role-content">
+
+  <div class="comparison-container">
+
+    <!-- LEFT SIDE -->
+    <div class="comparison-left">
+
+      <div class="card without">
+        <h3>Without greytHR</h3>
+        <ul>
+          <li>Data security concerns and system compatibility issues.</li>
+          <li>Low user adoption rates.</li>
+          <li>Data accuracy issues with hours of manual tasks</li>
+        </ul>
+      </div>
+
+      <div class="card with">
+        <h3>With greytHR</h3>
+        <p>
+          No compliance nightmares! greytHR’s own implementation team works with your IT,
+           to ensure seamless implementation and integration of HR tech,
+            with the assurance of data security and scalability
+        </p>
+       
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="comparison-right">
+      <div class="image-wrapper">
+        <img src="assets/images/cio.png" alt="cio" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+  <div *ngIf="activeRole === 'chro'">
+    <h3>Without greytHR – CHRO</h3>
+      <div *ngIf="activeRole === 'chro'" class="role-content">
+
+  <div class="comparison-container">
+
+    <!-- LEFT SIDE -->
+    <div class="comparison-left">
+
+      <div class="card without">
+        <h3>Without greytHR</h3>
+        <ul>
+          <li>People ops is still managed on Sheets!</li>
+          <li>Tons of (error-prone) manual data entry work</li>
+          <li>Unengaged, unmotivated workforce</li>
+          <li>Time-consuming administrative tasks</li>  
+        </ul>
+      </div>
+
+      <div class="card with">
+        <h3>With greytHR</h3>
+        <p>
+         Workforce management gets so much easier! HR teams can finally move away from Sheets!
+          Import and manage employee data, attendance and  leave data, 
+          monitor entire people ops and engage workforce at scale
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="comparison-right">
+      <div class="image-wrapper">
+        <img src="assets/images/chro.png" alt="CHRO " />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+  <div *ngIf="activeRole === 'payroll'">
+    <h3>Without greytHR – Payroll Admin</h3>
+    <div *ngIf="activeRole === 'payroll'" class="role-content">
+
+  <div class="comparison-container">
+
+    <!-- LEFT SIDE -->
+    <div class="comparison-left">
+
+      <div class="card without">
+        <h3>Without greytHR</h3>
+        <ul>
+          <li>Payroll is still managed on Sheets!</li>
+          <li>Complexity of regulations</li>
+          <li>Data accuracy issues with hours of manual tasks</li>
+        </ul>
+      </div>
+
+      <div class="card with">
+        <h3>With greytHR</h3>
+        <p>
+          Trust the most advanced payroll ops solution, managing 20 lakh
+          payslips in a month! greytHR payroll processing removes manual work,
+          ensuring 100% accuracy and direct bank transfer options.
+        </p>
+        <p>
+          All in a safe, compliant way. Generate payroll reports, publish
+          payslips and release Form 16s.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="comparison-right">
+      <div class="image-wrapper">
+        <img src="assets/images/support-girl.png" alt="Payroll Support" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+    
+  </div>
+
+  <div *ngIf="activeRole === 'manager'">
+    <h3>Without greytHR – Managers</h3>
+      <div *ngIf="activeRole === 'manager'" class="role-content">
+
+  <div class="comparison-container">
+
+    <!-- LEFT SIDE -->
+    <div class="comparison-left">
+
+      <div class="card without">
+        <h3>Without greytHR</h3>
+        <ul>
+          <li>Time-consuming approvals.</li>
+          <li>Challenges in performance monitoring.</li>
+          <li>Administrative overload</li>
+        </ul>
+      </div>
+
+      <div class="card with">
+        <h3>With greytHR</h3>
+        <p>
+          Team Managers can finally take it easy! Streamline team management 
+          (attendance, leaves, performance, shifts) and improve team communication.
+           Look at team reports and increase overall productivity. Run timely appraisals,
+            manage shifts, and simplify approval processes.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="comparison-right">
+      <div class="image-wrapper">
+        <img src="assets/images/managers.png" alt="Manager " />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+  <div *ngIf="activeRole === 'employee'">
+    <h3>Without greytHR – Employees</h3>
+      <div *ngIf="activeRole === 'employee'" class="role-content">
+
+  <div class="comparison-container">
+
+    <!-- LEFT SIDE -->
+    <div class="comparison-left">
+
+      <div class="card without">
+        <h3>Without greytHR</h3>
+        <ul>
+          <li>Complex workflows to complete basic tasks like mark leave and attendance</li>
+          <li>Over dependence on HR to access and maintain own records, documents</li>
+          <li>Unaware of policy changes and unengaged with rest of workforce</li>
+        </ul>
+      </div>
+
+      <div class="card with">
+        <h3>With greytHR</h3>
+        <p>
+          Make your employees self sufficient! greytHR mobile app for employees provides access to payslips, 
+          attendance and leave applications, shift checks,
+           training modules and so much more.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="comparison-right">
+      <div class="image-wrapper">
+        <img src="assets/images/employees.png" alt="Employee" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+<section class="comparison-section">
+
+  <div class="comparison-grid">
+
+    <!-- LEFT CONTENT -->
+    
+
+  </div>
+<section class="testimonial-section">
+
+  <h1 class="title">The Customers have spoken</h1>
+  <p class="subtitle">
+    Depth of our features, ease of implementation and adoption, devoted after
+    sales and support, cost-effectiveness – just a few things our customers love about us.
+  </p>
+
+  <!-- LOGOS -->
+  <div class="client-logos">
+    <img src="assets/logos/client-logos.png" class="logo"/>
+  </div>
+
+  <!-- TESTIMONIAL CARD -->
+  
+</section>
+  
+
+
+
+
+
+
+   
+    
+
+

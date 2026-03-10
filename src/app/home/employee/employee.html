@@ -1,0 +1,81 @@
+<!-- ================= EMPLOYEE TOP NAV ================= -->
+
+<div class="employee-nav">
+  <div class="nav-left">
+    <div class="breadcrumb">
+      Home > Employee
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <div class="breadcrumb-right">
+      <app-calander></app-calander>
+    </div>
+    <div class="refresh">⟳</div>
+  </div>
+</div>
+
+<!-- ================= EMPLOYEE OVERVIEW ================= -->
+<div class="overview-wrapper" *ngIf="!isChildActive">
+
+  <!-- Info Banner -->
+  <div class="help-box">
+    The <b>Overview</b> page guides you through an overview of your organization’s day-to-day HR activities including lifecycle events like additions, separations, etc.
+    <span class="hide-help">Help</span>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="grid-two">
+    <div class="card large">
+      <h3>Employees Head Count</h3>
+      <canvas id="headCountChart"></canvas>
+    </div>
+
+    <div class="card small">
+      <h2>0</h2>
+      <p>Helpdesk Stats of 3 Months</p>
+      <span class="muted">0% vs Previous month</span>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="grid-three">
+    <div class="card">
+      <h2>0</h2>
+      <p>Employees Login Stats of 3 Months</p>
+    </div>
+
+    <div class="card">
+      <h2>0</h2>
+      <p>Letters Generated Stats of 3 Months</p>
+    </div>
+
+    <div class="card">
+      <h2>2</h2>
+      <p>Mobile App Users</p>
+      <canvas id="mobileChart"></canvas>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="grid-three">
+    <div class="card empty">
+      <h4>New Joiners for Last 1 Month</h4>
+      <div class="empty-box">No new joiners yet.</div>
+    </div>
+
+    <div class="card empty">
+      <h4>Upcoming Birthdays for a week</h4>
+      <div class="empty-box">No birthday reminders.</div>
+    </div>
+
+    <div class="card empty">
+      <h4>Confirmation due for next 1 Month</h4>
+      <div class="empty-box">No employee confirmation pending.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= MAIN HUB / CHILD CONTENT ================= -->
+<router-outlet></router-outlet>

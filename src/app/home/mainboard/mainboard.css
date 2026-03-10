@@ -1,0 +1,651 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ============================= */
+/* TOP NAVBAR (FIXED) */
+/* ============================= */
+.top-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 19px;
+  background: #f8f9fc;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 2000;
+  /* higher than toggle */
+}
+
+
+/* LEFT SECTION */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* LOGO */
+.logo img {
+  height: 40px;
+}
+
+/* RIGHT SECTION */
+.right-section span {
+  margin-left: 4px;
+  font-size: 18px;
+  cursor: pointer;
+
+}
+
+/* ============================= */
+/* 9 DOT MENU */
+/* ============================= */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 6px);
+  gap: 4px;
+  cursor: pointer;
+  margin-left: -8px;
+}
+
+.menu-icon span {
+  width: 6px;
+  height: 6px;
+  background: #555;
+  border-radius: 50%;
+}
+
+/* DROPDOWN BOX */
+.apps-dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 260px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  z-index: 3000;
+  /* highest */
+}
+
+
+.apps-title {
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+/* APP ITEM */
+.app-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.app-item:hover {
+  background: #f3f5fa;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* ICON COLORS */
+.purple {
+  background: #ede7f6;
+}
+
+.cyan {
+  background: #e0f7fa;
+}
+
+.pink {
+  background: #fde2e4;
+}
+
+.violet {
+  background: #e6e6fa;
+}
+
+.orange {
+  background: #ffe8cc;
+}
+
+.green {
+  background: #e6f4ea;
+}
+
+.red {
+  background: #ffe3e3;
+}
+
+.blue {
+  background: #e3f2fd;
+}
+
+.yellow {
+  background: #fff8db;
+}
+
+/* ============================= */
+/* TOGGLE BUTTONS (FIXED BELOW NAV) */
+/* ============================= */
+/* Toggle Container */
+/* ================= TOGGLE CONTAINER ================= */
+
+.toggle-container {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background: #f4f6fa;
+  z-index: 999;
+}
+
+/* REAL PILL WRAPPER */
+.toggle-container {
+  display: flex;
+  padding: 1px 0px;
+}
+
+.toggle-container-inner {
+  display: inline-flex;
+  background: #f7f9fc;
+  border: 1px solid #d0d7e2;
+  border-radius: 50px;
+  padding: 4px;
+  overflow: hidden;
+  /* IMPORTANT — prevents overflow */
+}
+
+/* Buttons */
+.toggle-container-inner button {
+  padding: 8px 26px;
+  border: none;
+  background: transparent;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #475467;
+  transition: all 0.3s ease;
+}
+
+/* ACTIVE BUTTON */
+.toggle-container-inner button.active {
+  background: #e8edff;
+  color: #5b6dff;
+}
+
+/* ============================= */
+/* SCROLLABLE CONTENT AREA */
+/* ============================= */
+.content-area {
+  margin-top: 0px;
+  /* header + toggle spacing */
+  height: calc(100vh - 130px);
+  overflow-y: auto;
+  background: #f7f9fc;
+}
+
+/* EMPLOYEE NAV IN HEADER */
+.employee-nav-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.employee-nav-inline button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  padding: 6px 4px;
+}
+
+.employee-nav-inline button.active {
+  color: #0f766e;
+  border-bottom: 2px solid #0f766e;
+}
+
+/* payroll NAV IN HEADER */
+/* .module-top-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  padding: 14px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+} */
+
+.module-top-nav button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1px 0;
+  position: relative;
+  color: #444;
+}
+
+.module-top-nav button.active {
+  color: #16a34a;
+  /* Employee green */
+}
+
+.module-top-nav button.active.payroll {
+  color: #e11d48;
+  /* Payroll red */
+}
+
+.module-top-nav button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 1;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
+
+/* leave-aatend NAV IN HEADER */
+.sub-nav {
+  display: flex;
+  margin-left: 11px;
+}
+
+.sub-nav button {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 4;
+  cursor: pointer;
+  color: #555;
+}
+
+.sub-nav button.active {
+  background: #f0e6ff;
+  border-radius: 20px;
+  color: #6b3cc9;
+  font-weight: 500;
+}
+
+/* reports NAV IN HEADER */
+
+
+.module-top-nav button {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 6px 14px;
+  cursor: pointer;
+  color: #444;
+}
+
+.module-top-nav button.active.performance {
+  background: #f2ecff;
+  color: #5c3dc9;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.module-top-nav button.active.workflow {
+  background: #eaf1ff;
+  color: #3f6be5;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+ .module-top-nav {
+  display: flex;
+  gap: 0x;
+} 
+
+.module-top-nav button {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 6px 3px;
+  cursor: pointer;
+  color: #555;
+}
+
+.module-top-nav button.active.reports {
+  background: #eaf1ff;
+  color: #3f6be5;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.settings-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.settings-btn {
+  background: #eef2ff;
+  border: none;
+  border-radius: 50%;
+  padding: 0 1px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Arrow */
+
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+
+
+/* Dropdown */
+.settings-dropdown {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  width: 240px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* ARROW (exact greytHR style) */
+.settings-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 60px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.06);
+}
+
+
+.dropdown-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 16px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 6px 0;
+}
+
+/* NAV BAR */
+.top-nav {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 0 24px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+/* LEFT ITEMS */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-item {
+  font-size: 14px;
+  color: #475569;
+  padding: 6px 4px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background: #e8f4f3;
+  color: #0f766e;
+}
+
+/* DROPDOWN */
+.dropdown-wrapper {
+  position: relative;
+}
+
+/* CARET ARROW */
+.caret {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+
+/* ROTATE WHEN OPEN */
+.caret.rotate {
+  transform: rotate(180deg);
+  font-size: 15px;
+}
+
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* ITEMS */
+.dropdown-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f1f5f9;
+}
+
+/* COMPACT TOP NAVBAR (MATCH greytHR) */
+.module-top-nav.compact {
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+  border-bottom: 1px solid #eee;
+  margin-left: -5px;
+  border-radius: 25px;
+  
+}
+
+/* BUTTON STYLE */
+.module-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  /* 🔥 compact */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ACTIVE PAYROLL */
+.module-btn.payroll.active {
+  color: #e53935;
+  border-bottom: 2px solid #e53935;
+}
+
+/* NAV ITEM */
+.nav-item {
+  position: relative;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 34px;
+  /* 🔥 aligns tightly */
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 220px;
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+/* DROPDOWN ITEM */
+.dropdown-item {
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f7fa;
+}
+
+/* CARET */
+.caret {
+  font-size: 11px;
+  /* 🔥 small arrow */
+  transition: transform 0.2s ease;
+}
+
+.caret.rotate {
+  transform: rotate(180deg);
+}
+
+.modules-menu {
+  min-width: 260px;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6a6a;
+  opacity: 0.8;
+}
+
+.dropdown-item.active {
+  background: #fff3f3;
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+/* TOP NAV ITEM */
+.top-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ARROW */
+.arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* DROPDOWN CARD */
+.dropdown-menu {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  z-index: 1000;
+}
+
+/* DROPDOWN ITEMS */
+.dropdown-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.dropdown-item.active {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 600;
+}

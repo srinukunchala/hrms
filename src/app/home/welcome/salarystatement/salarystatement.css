@@ -1,0 +1,156 @@
+/* Info box */
+.employee-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 7px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+.nav-left button {
+  background: transparent;
+  border: none;
+  margin-right: 20px;
+  font-size: 15px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.refresh{
+      text-align: end;
+    margin-top: -32px;
+}
+
+.info-box {
+  background: #eefbfa;
+  border: 1px solid #cdeeed;
+  padding: 16px 18px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  justify-content: end;
+  position: relative;
+}
+
+.info-box a {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.hide-help {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Search card */
+.search-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  width: 60%;
+}
+
+.left h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dropdown {
+  border: 1px solid #d1d5db;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  padding: 6px 12px;
+  width: 320px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 6px;
+}
+
+.icon {
+  margin: 0 6px;
+}
+
+/* Image */
+.right img {
+  width: 220px;
+}
+
+/* Result card */
+.result-card {
+  background: #ffffff;
+  border-radius: 14px;
+  margin-top: 24px;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+  color: #374151;
+}
+
+.center img {
+  width: 180px;
+  margin-bottom: 16px;
+}
+
+.center h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.center p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Floating button */
+.floating-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,94 @@
+/* Copied relevant styles from engage.css for calendar UI */
+
+
+
+
+
+.breadcrumb-right {
+	display: flex;
+	gap: 12px;
+}
+
+.dropdown-pill {
+	background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 90px;
+    cursor: pointer;
+}
+
+.payroll-month-wrapper {
+	position: relative;
+}
+
+.payroll-month-btn {
+	display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.payroll-month-btn i {
+	color: #6366f1;
+}
+
+/*. caret used for the dropdown indicator */
+.caret {
+	margin-left: auto;
+	font-size: 12px;
+	transition: transform 0.2s ease;
+}
+
+.caret.rotate {
+	transform: rotate(180deg);
+}
+
+.payroll-month-dropdown {
+	position: absolute;
+	top: 110%;
+	width: 280px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+	padding: 10px;
+	z-index: 1000;
+}
+
+.month-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.month-item {
+	text-align: center;
+	padding: 8px 0;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #374151;
+}
+
+.month-item:hover {
+	background: #f3f4f6;
+}
+
+.month-item.active {
+	background: #e0e7ff;
+	color: #4338ca;
+	font-weight: 600;
+}
+

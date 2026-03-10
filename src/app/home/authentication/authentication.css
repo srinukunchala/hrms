@@ -1,0 +1,124 @@
+/* PAGE */
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* TWO COLUMN LAYOUT */
+.login-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* LEFT SIDE — FULL HEIGHT */
+.login-left {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px;
+}
+
+/* IMAGE — THIS IS THE KEY FIX */
+.login-illustration {
+  width: 85%;          /* fills column */
+  max-width: 520px;    /* keeps it elegant */
+  height: auto;
+}
+
+/* BUTTON — CENTERED BELOW IMAGE */
+.spot-btn {
+  background: transparent;
+  border: 2px solid #7a00cc;
+  color: #7a00cc;
+  padding: 14px 38px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.spot-btn:hover {
+  background: #7a00cc;
+  color: #fff;
+}
+
+/* RIGHT SIDE */
+.login-right {
+  background: linear-gradient(135deg, #4b007d, #9b00d6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGIN CARD */
+.login-card {
+  background: #fff;
+  padding: 36px;
+  border-radius: 22px;
+  width: 380px;
+}
+
+.login-card h3 {
+  margin-bottom: 6px;
+}
+
+.help-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.login-card label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-card input {
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0px 13px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.captcha {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.primary-btn {
+  width: 100%;
+  background: #3b0066;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.signup span {
+  color: #7a00cc;
+  font-weight: 600;
+  cursor: pointer;
+}
+.signup-link {
+  color: #7a1fa2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
