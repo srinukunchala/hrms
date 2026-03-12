@@ -67,24 +67,27 @@ export class DhCharts implements AfterViewInit {
     );
   }
 
-  createChart(id: string, type: any, labels: any[], data: number[], horizontal = false) {
+createChart(id: string, type: any, labels: any[], data: number[], horizontal = false) {
 
-    const canvas = document.getElementById(id) as HTMLCanvasElement;
+  // prevent server-side rendering crash
+  if (typeof document === 'undefined') return;
 
-    if (!canvas) return;
+  const canvas = document.getElementById(id) as HTMLCanvasElement;
 
-    new this.Chart(canvas, {
-      type: type,
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Employees',
-          data: data,
-          backgroundColor: '#2f8f9d',
-          borderColor: '#2f8f9d'
-        }]
-      },
-      options: horizontal ? { indexAxis: 'y' } : {}
-    });
-  }
+  if (!canvas || !this.Chart) return;
+
+  new this.Chart(canvas, {
+    type: type,
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Employees',
+        data: data,
+        backgroundColor: '#2f8f9d',
+        borderColor: '#2f8f9d'
+      }]
+    },
+    options: horizontal ? { indexAxis: 'y' } : {}
+  });
+}
 }
