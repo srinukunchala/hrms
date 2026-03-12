@@ -30,13 +30,8 @@
               "src/styles.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-  ],
-
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+  ]
+            
           },
           "configurations": {
             "production": {
@@ -45,11 +40,6 @@
                    "type": "anyComponentStyle",
                    "maximumWarning": "20kb",
                    "maximumError": "30kb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
