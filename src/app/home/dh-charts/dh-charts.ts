@@ -69,8 +69,8 @@ export class DhCharts implements AfterViewInit {
 
 createChart(id: string, type: any, labels: any[], data: number[], horizontal = false) {
 
-  // prevent server-side rendering crash
-  if (typeof document === 'undefined') return;
+  // stop if running on server (SSR)
+  if (!isPlatformBrowser(this.platformId)) return;
 
   const canvas = document.getElementById(id) as HTMLCanvasElement;
 
