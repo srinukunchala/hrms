@@ -1,7 +1,6 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-dh-charts',
@@ -11,10 +10,17 @@ import Chart from 'chart.js/auto';
 })
 export class DhCharts implements AfterViewInit {
 
+  private Chart: any;
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngAfterViewInit() {
+  async ngAfterViewInit() {
+
     if (isPlatformBrowser(this.platformId)) {
+
+      const chartModule = await import('chart.js/auto');
+      this.Chart = chartModule.default;
+
       this.loadCharts();
     }
   }
@@ -67,7 +73,7 @@ export class DhCharts implements AfterViewInit {
 
     if (!canvas) return;
 
-    new Chart(canvas, {
+    new this.Chart(canvas, {
       type: type,
       data: {
         labels: labels,
